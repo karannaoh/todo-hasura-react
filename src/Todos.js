@@ -20,7 +20,7 @@ const Todos = () => {
     <Query query={todo}>
     {({ loading, error, data }) => {
       if (loading) return "Loading...";
-      if (error) return `Error! ${error.message}`;
+      if (error) return (window.location.reload());
       if (data.todo.length){
         
     return data.todo.map(({ id, todo}) => (

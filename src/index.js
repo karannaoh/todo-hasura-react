@@ -4,7 +4,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { makeMainRoutes } from './Routes';
+import registerServiceWorker from './registerServiceWorker';
 // import registerServiceWorker from './registerServiceWorker';
-
-ReactDOM.render(<App />, document.getElementById('root'));
-// registerServiceWorker();
+const routes = makeMainRoutes();
+ReactDOM.render(routes, document.getElementById('root'));
+registerServiceWorker();
