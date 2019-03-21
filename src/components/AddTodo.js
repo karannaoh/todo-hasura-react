@@ -14,11 +14,11 @@ class AddTodo extends Component {
   }
   handleSubmit = (addTodo) => {
     // call function to add a todo
-    
-    addTodo({ variables: { todo: this.state.content},refetchQueries:[{query:TODO}]})
+    if(this.state.content){addTodo({ variables: { todo: this.state.content},refetchQueries:[{query:TODO}]})
     this.setState({
       content: ""
-    });
+    });}
+    
     
   }
   render() {
