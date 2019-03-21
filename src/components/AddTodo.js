@@ -1,24 +1,8 @@
 import React, { Component } from 'react'
-import gql from 'graphql-tag';
 import { Mutation } from 'react-apollo';
-import { FormGroup, FormControl, Button, InputGroup, Form } from 'react-bootstrap';
-const ADD_TODO = gql`
-  mutation AddTodo($todo: String!) {
-    insert_todo(objects:[{todo:$todo}]){
-      returning{
-        id
-      }
-    }
-  }
-`;
-const todo = gql` 
-  query { 
-  todo{
-    id
-    todo
-  }
-}
-`
+
+import {ADD_TODO, TODO} from './queries'
+
 class AddTodo extends Component {
   state = {
     content: ''
@@ -31,8 +15,10 @@ class AddTodo extends Component {
   handleSubmit = (addTodo) => {
     // call function to add a todo
     
-    addTodo({ variables: { todo: this.state.content},refetchQueries:[{query:todo}]})
-    this.state.content="";
+    addTodo({ variables: { todo: this.state.content},refetchQueries:[{query:TODO}]})
+    this.setState({
+      content: ""
+    });
     
   }
   render() {
@@ -48,7 +34,7 @@ class AddTodo extends Component {
           <label>Add a new todo:</label>
          
           <input type="text" onChange={this.handleChange} value={this.state.content} />
-          
+          <input type="submit"/>
         </form>
       </div>
        )}

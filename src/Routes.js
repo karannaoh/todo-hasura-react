@@ -1,12 +1,8 @@
 import React from 'react';
 import { Route, Router } from 'react-router-dom';
-// import App from './App';
-// import Home from './Home';
 import Callback from './Callback';
 import Auth from './Auth';
 import history from './history';
-// import Logout from './Logout'
-// import Abc from './abc'
 import Login from './Login'
 import App from './App';
 import Logout from './Logout'
@@ -18,7 +14,7 @@ const handleAuthentication = ({location}) => {
   }
 }
 
-export const makeMainRoutes = () => {
+export const route = () => {
 
   return (
        

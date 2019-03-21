@@ -3,9 +3,9 @@ import auth0 from 'auth0-js';
 
 export default class Auth {
   auth0 = new auth0.WebAuth({
-    domain: "todohasura.auth0.com",
-    clientID: "PFf6dTVgK1etLeQ5nuVVMrvwKI5k2Ak6",
-    redirectUri: "http://localhost:3000/callback",
+    domain: "example.auth0.com",
+    clientID: "clientid",
+    redirectUri: "callback uri",
     responseType: 'token id_token',
     scope: 'openid'
   });

@@ -1,36 +1,31 @@
 import React from 'react';
-import gql from 'graphql-tag'
 import { Query } from 'react-apollo';
-import Del from './DeleteTodo'
+import Del from './components/DeleteTodo'
 import { Alert } from 'reactstrap';
-const todo = gql` 
-  query { 
-  todo{
-    id
-    todo
-  }
-}
-`
+import Mark from './components/MarkDone'
+import {TODO} from './components/queries'
+
 
 const Todos = () => {
 
     // <p className="center">You have no todo's left, yay!</p>
   
   return (
-    <Query query={todo}>
+    <div className="collection-item" >
+    <Query query={TODO}>
+    
     {({ loading, error, data }) => {
       if (loading) return "Loading...";
-      if (error) return (window.location.reload());
+      if (error) return (console.log(error));
       if (data.todo.length){
-        
-    return data.todo.map(({ id, todo}) => (
+    return data.todo.map(({ id, todo, done}) => (
       
-      <div className="collection-item" key={id}>
-      <Alert key={id} color="primary">
-      <span  key={todo.id} > {todo}  <Del id={id} /> </span>
+      
+      <Alert key={id} color={done ? "success":"warning"}>
+      <span  key={todo.id} > {todo}  <Del id={id} /> <Mark id={id} /> </span>
       </Alert>
 
-      </div>
+      
     ));
     
   
@@ -41,8 +36,10 @@ const Todos = () => {
          }
       
     }}
+    
   </Query>
-  )
+   </div>
+)
 }
 
 export default Todos;
