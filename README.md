@@ -1,6 +1,8 @@
 #### Change Auth0 credentials in src/Auth.js
 #### Change hasura api in App.js
 
+Configure you auth0 and hasura credentials
+
 ## Start server
 
 In the project directory, you can run:
