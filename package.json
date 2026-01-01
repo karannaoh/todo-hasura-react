@@ -5,7 +5,7 @@
   "dependencies": {
     "apollo-boost": "^0.3.1",
     "apollo-fetch": "^0.7.0",
-    "auth0": "^2.16.0",
+    "auth0": "^2.44.1",
     "auth0-js": "^9.10.1",
     "bootstrap": "^4.3.1",
     "graphql": "^14.1.1",
@@ -17,7 +17,7 @@
     "react-dom": "^16.8.4",
     "react-icons": "^2.2.7",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "2.1.8",
+    "react-scripts": "5.0.1",
     "reactstrap": "^7.1.0"
   },
   "scripts": {
